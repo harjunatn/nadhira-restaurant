@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React, { ReactNode } from "react";
 
 interface LayoutProps {
   children: ReactNode;
@@ -7,7 +7,10 @@ interface LayoutProps {
 
 export const Layout: React.FC<LayoutProps> = ({ children, title }) => {
   return (
-    <div className="min-h-screen bg-pink-50">
+    <div
+      className="min-h-screen bg-pink-50"
+      style={{ backgroundImage: "url('/public/images/bg-menu.png')" }}
+    >
       {title && (
         <header className="bg-white border-b-4 border-pink-200 py-6 px-4 shadow-sm">
           <div className="max-w-4xl mx-auto">
@@ -17,9 +20,7 @@ export const Layout: React.FC<LayoutProps> = ({ children, title }) => {
           </div>
         </header>
       )}
-      <main className="max-w-4xl mx-auto px-4 py-6">
-        {children}
-      </main>
+      <main className="max-w-4xl mx-auto px-4 py-6">{children}</main>
     </div>
   );
 };

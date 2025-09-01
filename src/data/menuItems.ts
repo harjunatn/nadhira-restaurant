@@ -1,74 +1,130 @@
-import { MenuItem } from '../types';
+import { MenuItem } from "../types";
 
 export const menuItems: MenuItem[] = [
   {
-    id: '1',
-    name: 'Nasi Ayam',
+    id: "1",
+    name: "Nasi Ayam",
     price: 25000,
-    emoji: '🍗',
-    category: 'Makanan'
+    emoji: "🍗",
+    category: "Makanan",
   },
   {
-    id: '2', 
-    name: 'Mie Goreng',
+    id: "2",
+    name: "Mie Goreng",
     price: 20000,
-    emoji: '🍜',
-    category: 'Makanan'
+    emoji: "🍜",
+    category: "Makanan",
   },
   {
-    id: '3',
-    name: 'Pizza Mini',
+    id: "3",
+    name: "Pizza Mini",
     price: 35000,
-    emoji: '🍕',
-    category: 'Makanan'
+    emoji: "🍕",
+    category: "Makanan",
   },
   {
-    id: '4',
-    name: 'Burger',
+    id: "4",
+    name: "Burger",
     price: 30000,
-    emoji: '🍔',
-    category: 'Makanan'
+    emoji: "🍔",
+    category: "Makanan",
   },
   {
-    id: '5',
-    name: 'Es Krim',
+    id: "5",
+    name: "Es Krim",
     price: 15000,
-    emoji: '🍦',
-    category: 'Dessert'
+    emoji: "🍦",
+    category: "Dessert",
   },
   {
-    id: '6',
-    name: 'Kue Coklat',
+    id: "6",
+    name: "Kue Coklat",
     price: 18000,
-    emoji: '🍰',
-    category: 'Dessert'
+    emoji: "🍰",
+    category: "Dessert",
   },
   {
-    id: '7',
-    name: 'Jus Jeruk',
+    id: "7",
+    name: "Jus Apel",
     price: 12000,
-    emoji: '🧃',
-    category: 'Minuman'
+    emoji: "🧃",
+    category: "Minuman",
   },
   {
-    id: '8',
-    name: 'Susu Coklat',
+    id: "8",
+    name: "Susu Coklat",
     price: 10000,
-    emoji: '🥛',
-    category: 'Minuman'
+    emoji: "🥛",
+    category: "Minuman",
   },
   {
-    id: '9',
-    name: 'Donat',
+    id: "9",
+    name: "Donat",
     price: 8000,
-    emoji: '🍩',
-    category: 'Dessert'
+    emoji: "🍩",
+    category: "Dessert",
   },
   {
-    id: '10',
-    name: 'Kentang Goreng',
+    id: "10",
+    name: "Kentang Goreng",
     price: 16000,
-    emoji: '🍟',
-    category: 'Makanan'
-  }
+    emoji: "🍟",
+    category: "Makanan",
+  },
+  {
+    id: "11",
+    name: "Pretzel",
+    price: 35000,
+    emoji: "🥨",
+    category: "Makanan",
+  },
+  {
+    id: "12",
+    name: "Sandwich",
+    price: 25000,
+    emoji: "🥪",
+    category: "Makanan",
+  },
+  {
+    id: "13",
+    name: "Hotdog",
+    price: 32000,
+    emoji: "🌭",
+    category: "Makanan",
+  },
+  {
+    id: "14",
+    name: "Ramen",
+    price: 53000,
+    emoji: "🍜",
+    category: "Makanan",
+  },
+  {
+    id: "15",
+    name: "Sushi",
+    price: 15000,
+    emoji: "🍱",
+    category: "Makanan",
+  },
+  {
+    id: "16",
+    name: "Pancake",
+    price: 27000,
+    emoji: "🥞",
+    category: "Makanan",
+  },
+  {
+    id: "17",
+    name: "Sate",
+    price: 33000,
+    emoji: "🍢",
+    category: "Makanan",
+  },
+  {
+    id: "18",
+    name: "Kopi",
+    price: 22000,
+    emoji: "☕",
+    category: "Minuman",
+  },
 ];

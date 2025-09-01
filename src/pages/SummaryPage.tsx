@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import { ArrowLeft } from 'lucide-react';
-import { useNavigate } from 'react-router-dom';
-import { Layout } from '../components/Layout';
-import { CartSummaryList } from '../components/CartSummaryList';
-import { QRModal } from '../components/QRModal';
-import { useCartContext } from '../context/CartContext';
+import React, { useState } from "react";
+import { ArrowLeft } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import { Layout } from "../components/Layout";
+import { CartSummaryList } from "../components/CartSummaryList";
+import { QRModal } from "../components/QRModal";
+import { useCartContext } from "../context/CartContext";
 
 export const SummaryPage: React.FC = () => {
   const { subtotal, totalItems } = useCartContext();
@@ -12,14 +12,14 @@ export const SummaryPage: React.FC = () => {
   const navigate = useNavigate();
 
   const formatPrice = (price: number) => {
-    return new Intl.NumberFormat('id-ID', {
-      style: 'currency',
-      currency: 'IDR',
-      minimumFractionDigits: 0
+    return new Intl.NumberFormat("id-ID", {
+      style: "currency",
+      currency: "IDR",
+      minimumFractionDigits: 0,
     }).format(price);
   };
 
-  const tax = 0; // 0% tax as specified
+  const tax = (subtotal * 11) / 100; // 0% tax as specified
   const grandTotal = subtotal + tax;
 
   return (
@@ -27,7 +27,7 @@ export const SummaryPage: React.FC = () => {
       <Layout title="Ringkasan Pesanan 📋">
         <div className="space-y-6 pb-32">
           <button
-            onClick={() => navigate('/')}
+            onClick={() => navigate("/")}
             className="flex items-center gap-3 text-slate-600 hover:text-slate-800 text-xl font-semibold transition-colors duration-200"
           >
             <ArrowLeft size={24} />
@@ -40,19 +40,25 @@ export const SummaryPage: React.FC = () => {
             <div className="bg-white rounded-2xl shadow-sm border border-pink-100 p-6 space-y-4">
               <div className="flex justify-between text-xl">
                 <span className="text-slate-600">Subtotal:</span>
-                <span className="font-bold text-slate-800">{formatPrice(subtotal)}</span>
+                <span className="font-bold text-slate-800">
+                  {formatPrice(subtotal)}
+                </span>
               </div>
-              
+
               <div className="flex justify-between text-xl">
-                <span className="text-slate-600">Pajak (0%):</span>
-                <span className="font-bold text-slate-800">{formatPrice(tax)}</span>
+                <span className="text-slate-600">Pajak (11%):</span>
+                <span className="font-bold text-slate-800">
+                  {formatPrice(tax)}
+                </span>
               </div>
-              
+
               <hr className="border-pink-200" />
-              
+
               <div className="flex justify-between text-2xl">
                 <span className="font-bold text-slate-800">Total:</span>
-                <span className="font-bold text-pink-600">{formatPrice(grandTotal)}</span>
+                <span className="font-bold text-pink-600">
+                  {formatPrice(grandTotal)}
+                </span>
               </div>
 
               <button

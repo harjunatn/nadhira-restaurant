@@ -9,7 +9,7 @@ export const Layout: React.FC<LayoutProps> = ({ children, title }) => {
   return (
     <div
       className="min-h-screen bg-pink-50"
-      style={{ backgroundImage: "url('/public/images/bg-menu.png')" }}
+      style={{ backgroundImage: "url('/images/bg-menu.png')" }}
     >
       {title && (
         <header className="bg-white border-b-4 border-pink-200 py-6 px-4 shadow-sm">

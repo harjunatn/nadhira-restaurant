@@ -1,29 +1,29 @@
-import React, { useState } from 'react';
-import { Layout } from '../components/Layout';
-import { SearchBar } from '../components/SearchBar';
-import { CategorySection } from '../components/CategorySection';
-import { CartBar } from '../components/CartBar';
-import { Toast } from '../components/Toast';
-import { menuItems } from '../data/menuItems';
+import React, { useState } from "react";
+import { Layout } from "../components/Layout";
+import { SearchBar } from "../components/SearchBar";
+import { CategorySection } from "../components/CategorySection";
+import { CartBar } from "../components/CartBar";
+import { Toast } from "../components/Toast";
+import { menuItems } from "../data/menuItems";
 
 export const MenuPage: React.FC = () => {
-  const [toast, setToast] = useState({ show: false, message: '' });
-  const [searchTerm, setSearchTerm] = useState('');
+  const [toast, setToast] = useState({ show: false, message: "" });
+  const [searchTerm, setSearchTerm] = useState("");
 
   const showToast = (message: string) => {
     setToast({ show: true, message });
   };
 
   const hideToast = () => {
-    setToast({ show: false, message: '' });
+    setToast({ show: false, message: "" });
   };
 
   const handleItemAdded = () => {
-    showToast('Ditambahkan! 🎉');
+    showToast("Ditambahkan! 🎉");
   };
 
   // Filter items based on search term
-  const filteredItems = menuItems.filter(item =>
+  const filteredItems = menuItems.filter((item) =>
     item.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
@@ -38,27 +38,31 @@ export const MenuPage: React.FC = () => {
   }, {} as Record<string, typeof menuItems>);
 
   // Get categories in a specific order
-  const categoryOrder = ['Makanan', 'Minuman', 'Dessert'];
-  const orderedCategories = categoryOrder.filter(category => 
-    groupedItems[category] && groupedItems[category].length > 0
+  const categoryOrder = ["Makanan", "Minuman", "Dessert"];
+  const orderedCategories = categoryOrder.filter(
+    (category) => groupedItems[category] && groupedItems[category].length > 0
   );
   return (
     <>
-      <Layout title="Pilih Menu 🍰">
-        <SearchBar 
-          searchTerm={searchTerm}
-          onSearchChange={setSearchTerm}
-        />
-        
+      <Layout title="Nadhira's Restaurant">
+        <h1 className="text-3xl font-bold text-slate-800 text-center mb-6">
+          Pilih Menu 🍰
+        </h1>
+        <SearchBar searchTerm={searchTerm} onSearchChange={setSearchTerm} />
+
         <div className="pb-32">
           {orderedCategories.length === 0 ? (
             <div className="text-center py-12">
               <div className="text-6xl mb-4">🔍</div>
-              <p className="text-2xl text-slate-600">Tidak ada makanan yang ditemukan</p>
-              <p className="text-lg text-slate-500 mt-2">Coba kata kunci lain</p>
+              <p className="text-2xl text-slate-600">
+                Tidak ada makanan yang ditemukan
+              </p>
+              <p className="text-lg text-slate-500 mt-2">
+                Coba kata kunci lain
+              </p>
             </div>
           ) : (
-            orderedCategories.map(category => (
+            orderedCategories.map((category) => (
               <CategorySection
                 key={category}
                 category={category}
@@ -68,10 +72,10 @@ export const MenuPage: React.FC = () => {
             ))
           )}
         </div>
-        
+
         <CartBar />
       </Layout>
-      
+
       <Toast
         message={toast.message}
         isVisible={toast.show}
